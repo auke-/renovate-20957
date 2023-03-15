@@ -3,6 +3,6 @@
   "extends": [
     "config:base"
   ],
-  "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} --{{{replace '[^ ]+(\/[^\/ ]+\/[^\/ ]+)' ' ...$1' commitMessageTopic}}}-- {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
+  "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} -x-{{{replace 'quay' '...' commitMessageTopic}}}-- {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
   "prTitle": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}}"
 }
