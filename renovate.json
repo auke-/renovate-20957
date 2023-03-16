@@ -3,7 +3,12 @@
   "extends": [
     "config:base"
   ],
-  "commitMessageTopic": "dependency {{{replace '[^ ]+(\/[^\/ ]+\/[^\/ ]+)' '...$1' depName}}}",
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "commitMessageTopic": "{{{replace '[^ ]+(\/[^\/ ]+\/[^\/ ]+)' '...$1' depName}}} docker tag"
+    }
+  ],
   "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} -x-{{{replace 'quay' '...' '{{{commitMessageTopic}}}' }}}-- {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
   "prTitle": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}}"
 }
