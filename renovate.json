@@ -6,9 +6,8 @@
   "packageRules": [
     {
       "matchDatasources": ["docker"],
-      "commitMessageTopic": "{{{replace '[^ ]+(\/[^\/ ]+\/[^\/ ]+)' '...$1' depName}}} docker tag"
+      "commitMessageTopic": "{{{replace '[^ ]+(\/[^\/ ]+\/[^\/ ]+)' '...$1' depName}}} docker tag",
+      "prTitle": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{depName}}} docker tag {{{commitMessageExtra}}} {{{commitMessageSuffix}}}"
     }
-  ],
-  "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} -x-{{{replace 'quay' '...' '{{{commitMessageTopic}}}' }}}-- {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
-  "prTitle": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}}"
+  ]
 }
